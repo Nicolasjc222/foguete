@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+    <title>Foguetes</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            var toggleHistoria = document.getElementById("toggleHistoria");
+            var submenuHistoria = document.getElementById("submenuHistoria");
+            var toggleFoguetes = document.getElementById("toggleFoguetes");
+            var submenuFoguetes = document.getElementById("submenuFoguetes");
+
+            function closeAll() {
+                submenuHistoria.className = "submenu";
+                submenuFoguetes.className = "submenu";
+            }
+
+            toggleHistoria.onclick = function (e) {
+                e.preventDefault();
+                if (submenuHistoria.className === "submenu") {
+                    closeAll();
+                    submenuHistoria.className = "submenu show";
+                } else {
+                    submenuHistoria.className = "submenu";
+                }
+            };
+
+            toggleFoguetes.onclick = function (e) {
+                e.preventDefault();
+                if (submenuFoguetes.className === "submenu") {
+                    closeAll();
+                    submenuFoguetes.className = "submenu show";
+                } else {
+                    submenuFoguetes.className = "submenu";
+                }
+            };
+
+            document.onclick = function (event) {
+                if (
+                    event.target !== toggleHistoria && !submenuHistoria.contains(event.target) &&
+                    event.target !== toggleFoguetes && !submenuFoguetes.contains(event.target)
+                ) {
+                    closeAll();
+                }
+            };
+        };
+    </script>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li id="menuHome"><a href="../index.html">HOME</a></li>
+
+                <li id="menuFoguetes">
+                    <a href="#" id="toggleFoguetes">Foguetes</a>
+                    <ul id="submenuFoguetes" class="submenu">
+                        <li><a href="./4.html">Como funciona</a></li>
+                        <li><a href="./5.html">Tipos de foguetes</a></li>
+                        <li><a href="./6.html">Foguetes famosos</a></li>
+                        <li><a href="./8.html">Galeria de Imagens</a></li>
+                    </ul>
+                </li>
+                <li id="menuHistoria">
+                    <a href="#" id="toggleHistoria">História</a>
+                    <ul id="submenuHistoria" class="submenu">
+                        <li><a href="./3.html">História</a></li>
+                        <li><a href="./7.html">Missões</a></li>
+                        <li><a href="./11.html">Curiosidades</a></li>
+                    </ul>
+                </li>
+
+                <li id="menuQuiz"><a href="./9.html">Quiz</a></li>
+
+                <li id="menuSobre"><a href="./2.html">Sobre</a></li>
+
+                <li id="menuContatos"><a href="./10.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="containerFuncionamento" style="text-align: center;">
+            <h2 class="FonteGigante">Curiosidades</h2>
+            <div class="tabela-container">
+                <table border="1" cellpadding="10" cellspacing="0">
+                    <thead class="FonteGrande">
+                        <tr>
+                            <th class="FonteMaior">Nome da espaçonave</th>
+                            <th class="FonteMaior">País de origem</th>
+                            <th class="FonteMaior">Ano de lançamento</th>
+                            <th class="FonteMaior">Curiosidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="FonteMaior">Sputnik 1</td>
+                            <td class="FonteMaior">União Soviética</td>
+                            <td class="FonteMaior">1957</td>
+                            <td class="FonteMaior">Primeiro satélite artificial da Terra.</td>
+                        </tr>
+                        <tr>
+                            <td class="FonteMaior">Vostok 1</td>
+                            <td class="FonteMaior">União Soviética</td>
+                            <td class="FonteMaior">1961</td>
+                            <td class="FonteMaior">Levou Yuri Gagarin, o primeiro humano no espaço.</td>
+                        </tr>
+                        <tr>
+                            <td class="FonteMaior">Apollo 11</td>
+                            <td class="FonteMaior">Estados Unidos</td>
+                            <td class="FonteMaior">1969</td>
+                            <td class="FonteMaior">Primeira missão tripulada a pousar na Lua.</td>
+                        </tr>
+                        <tr>
+                            <td class="FonteMaior">Salyut 1</td>
+                            <td class="FonteMaior">União Soviética</td>
+                            <td class="FonteMaior">1971</td>
+                            <td class="FonteMaior">Primeira estação espacial colocada em órbita.</td>
+                        </tr>
+                        <tr>
+                            <td class="FonteMaior">Skylab</td>
+                            <td class="FonteMaior">Estados Unidos</td>
+                            <td class="FonteMaior">1973</td>
+                            <td class="FonteMaior">Primeira estação espacial dos EUA.</td>
+                        </tr>
+                        <tr>
+                            <td class="FonteMaior">Columbia</td>
+                            <td class="FonteMaior">Estados Unidos</td>
+                            <td class="FonteMaior">1981</td>
+                            <td class="FonteMaior">Primeiro ônibus espacial reutilizável da NASA.</td>
+                        </tr>
+                        <tr>
+                            <td class="FonteMaior">Challenger</td>
+                            <td class="FonteMaior">Estados Unidos</td>
+                            <td class="FonteMaior">1983</td>
+                            <td class="FonteMaior">Ônibus espacial conhecido pelo trágico acidente em 1986.</td>
+                        </tr>
+                        <tr>
+                            <td class="FonteMaior">Ariane 5</td>
+                            <td class="FonteMaior">Europa</td>
+                            <td class="FonteMaior">1996</td>
+                            <td class="FonteMaior">Lançou o telescópio James Webb em 2021.</td>
+                        </tr>
+                        <tr>
+                            <td class="FonteMaior">Falcon 9</td>
+                            <td class="FonteMaior">Estados Unidos</td>
+                            <td class="FonteMaior">2010</td>
+                            <td class="FonteMaior">Primeiro foguete orbital com pouso vertical reutilizável.</td>
+                        </tr>
+                        <tr>
+                            <td class="FonteMaior">SpaceX Crew Dragon</td>
+                            <td class="FonteMaior">Estados Unidos</td>
+                            <td class="FonteMaior">2020</td>
+                            <td class="FonteMaior">Primeiro voo comercial tripulado ao espaço.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Contato: 31 8971-4857 | Instagram: @foguetesmuitosfodas | TikTok: @foguetesfodas | Email:
+            foguetesfodas@gmail.com</p>
+    </footer>
+</body>
+
+</html>

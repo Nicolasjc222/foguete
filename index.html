@@ -1,0 +1,156 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+        <title>Foguetes</title>
+        <link rel="stylesheet" href="css/estilos.css">
+    </head>
+
+    <body>
+        <script>
+            window.onload = function () {
+                var toggleHistoria = document.getElementById("toggleHistoria");
+                var submenuHistoria = document.getElementById("submenuHistoria");
+                var toggleFoguetes = document.getElementById("toggleFoguetes");
+                var submenuFoguetes = document.getElementById("submenuFoguetes");
+
+                function closeAll() {
+                    submenuHistoria.className = "submenu";
+                    submenuFoguetes.className = "submenu";
+                }
+
+                toggleHistoria.onclick = function (e) {
+                    e.preventDefault();
+                    if (submenuHistoria.className === "submenu") {
+                        closeAll();
+                        submenuHistoria.className = "submenu show";
+                    } else {
+                        submenuHistoria.className = "submenu";
+                    }
+                };
+
+                toggleFoguetes.onclick = function (e) {
+                    e.preventDefault();
+                    if (submenuFoguetes.className === "submenu") {
+                        closeAll();
+                        submenuFoguetes.className = "submenu show";
+                    } else {
+                        submenuFoguetes.className = "submenu";
+                    }
+                };
+
+                document.onclick = function (event) {
+                    if (
+                        event.target !== toggleHistoria && !submenuHistoria.contains(event.target) &&
+                        event.target !== toggleFoguetes && !submenuFoguetes.contains(event.target)
+                    ) {
+                        closeAll();
+                    }
+                };
+            };
+        </script>
+        <header>
+            <nav class="menu">
+                <ul>
+                    <li id="menuHome"><a href="index.html">HOME</a></li>
+
+                    <li id="menuFoguetes">
+                        <a href="#" id="toggleFoguetes">Foguetes</a>
+                        <ul id="submenuFoguetes" class="submenu">
+                            <li><a href="./pages/4.html">Como funciona</a></li>
+                            <li><a href="./pages/5.html">Tipos de foguetes</a></li>
+                            <li><a href="./pages/6.html">Foguetes famosos</a></li>
+                            <li><a href="./pages/8.html">Galeria de Imagens</a></li>
+                        </ul>
+                    </li>
+                    <li id="menuHistoria">
+                        <a href="#" id="toggleHistoria">História</a>
+                        <ul id="submenuHistoria" class="submenu">
+                            <li><a href="./pages/3.html">História</a></li>
+                            <li><a href="./pages/7.html">Missões</a></li>
+                            <li><a href="./pages/11.html">Curiosidades</a></li>
+                        </ul>
+                    </li>
+
+                    <li id="menuQuiz"><a href="./pages/9.html">Quiz</a></li>
+
+                    <li id="menuSobre"><a href="./pages/2.html">Sobre</a></li>
+
+                    <li id="menuContatos"><a href="./pages/10.html">Contatos</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="containerFuncionamento">
+            <section id="inicio" class="section">
+                <h1 class="FonteGigante">Seja bem-vindo ao Universo dos Foguetes!</h1>
+                <p class="FonteMaior">Este site foi criado para quem já olhou para o céu e se perguntou:
+                    "Como um foguete consegue sair da Terra?" ou "Qual foi o primeiro foguete da história?"</p>
+                <p class="FonteMaior">Aqui, você vai descobrir como os foguetes funcionam, conhecer sua história fascinante —
+                    que começou há séculos com pólvora e tubos de bambu — e explorar os diferentes tipos usados
+                    até hoje em missões espaciais incríveis.</p>
+                <h2 class="FonteGrande">Objetivo</h2>
+                <p class="FonteMaior">O site “Foguetes” tem como principal objetivo popularizar o conhecimento astronáutico, explicando de
+                    forma clara, visual e interativa como funcionam os foguetes, sua história e seus diferentes tipos.</p>
+            </section>
+            <section id="origens" class="section">
+                <h2 class="FonteGrande">Origens na China Antiga</h2>
+                <p class="FonteMaior">Os foguetes nasceram como uma consequência indireta da busca por mistérios alquímicos e filosóficos na
+                    China antiga. Alquimistas da Dinastia Han (c. 200 a.C.) experimentavam misturas para encontrar o “elixir
+                    da imortalidade”, e essa curiosidade levou à descoberta da pólvora no século IX.</p>
+                <h2 class="FonteGrande">Expansão e Uso Militar (séculos X ao XV)</h2>
+                <p class="FonteMaior">Na Dinastia Song, os foguetes começaram a ser usados em conflitos militares, com lançadores múltiplos e
+                    flechas explosivas. O tratado Huolongjing descreve foguetes com múltiplos estágios e aletas
+                    rudimentares.</p>
+                <h2 class="FonteGrande">Adoção no Ocidente e Avanços Teóricos</h2>
+                <p class="FonteMaior">Com a chegada da pólvora à Europa, inventores como Conrad Haas propuseram conceitos de foguetes com
+                    estágios e propelentes líquidos. O termo “foguete” vem do italiano “rochetta”.</p>
+                <h2 class="FonteGrande">Base Científica Moderna</h2>
+                <p class="FonteMaior">No século XX, cientistas como Tsiolkovski e Goddard criaram os primeiros modelos científicos da
+                    propulsão. Goddard lançou o primeiro foguete a combustível líquido em 1926.</p>
+                <h2 class="FonteGrande">Segunda Guerra Mundial e o V-2</h2>
+                <p class="FonteMaior">O foguete V-2 foi criado pela Alemanha e foi o primeiro míssil balístico. Após a guerra, cientistas
+                    alemães foram levados aos EUA e à URSS, iniciando a corrida espacial.</p>
+            </section>
+            <section id="funcionamento" class="section">
+                <h2 class="FonteGrande">Como os foguetes funcionam?</h2>
+                <p class="FonteMaior">Os foguetes funcionam com base na queima controlada de combustível e comburente. Como operam no espaço,
+                    precisam levar ambos os elementos consigo.</p>
+                <ul class="FonteMaior">
+                    <li><strong>Combustível e Comburente:</strong> armazenados em tanques separados, reagem na câmara de
+                        combustão.</li>
+                    <li><strong>Propulsão:</strong> a queima libera gases que são expelidos para trás, gerando empuxo.</li>
+                    <li><strong>Controle e Direção:</strong> giroscópios e sistemas de navegação estabilizam o voo.</li>
+                    <li><strong>Estágios:</strong> partes do foguete que se soltam durante o voo para reduzir peso.</li>
+                </ul>
+            </section>
+            <section id="tipos" class="section">
+                <h2 class="FonteGrande">Tipos de Foguetes</h2>
+                <p class="FonteMaior"><strong>Sondas Espaciais:</strong> não tripuladas, exploram o espaço profundo (ex: Voyager 1, Parker
+                    Solar Probe).</p>
+                <p class="FonteMaior"><strong>Foguetes Tripulados:</strong> levam astronautas ao espaço (ex: Vostok, Apollo 11, Crew Dragon).
+                </p>
+                <p class="FonteMaior"><strong>Foguetes Reutilizáveis:</strong> voltam à Terra e podem ser usados novamente (ex: Falcon 9, New
+                    Shepard).</p>
+                <p class="FonteMaior"><strong>Lançadores Comerciais:</strong> colocam satélites em órbita (ex: Ariane 5, Electron).</p>
+            </section>
+            <section id="missoes" class="section">
+                <h2 class="FonteGrande">Missões Espaciais Históricas</h2>
+                <p class="FonteMaior"><strong>Apollo 11 (1969):</strong> primeiro pouso tripulado na Lua.</p>
+                <p class="FonteMaior"><strong>Crew Dragon (2020):</strong> transporte de astronautas da SpaceX.</p>
+                <p class="FonteMaior"><strong>Artemis I:</strong> missão da NASA que marca o retorno à Lua.</p>
+                <p class="FonteMaior"><strong>Sputnik 1 (1957):</strong> primeiro satélite artificial da Terra.</p>
+                <p class="FonteMaior"><strong>James Webb (2021):</strong> telescópio que estuda o universo.</p>
+            </section>
+        </div>
+        </main>
+        <footer>
+            <p>Contato: 31 8971-4857 | Instagram: @foguetesmuitosfodas | TikTok: @foguetesfodas | Email:
+                foguetesfodas@gmail.com</p>
+        </footer>
+    </body>
+
+
+    </html>

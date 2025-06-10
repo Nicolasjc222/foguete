@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+    <title>Foguetes</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            var toggleHistoria = document.getElementById("toggleHistoria");
+            var submenuHistoria = document.getElementById("submenuHistoria");
+            var toggleFoguetes = document.getElementById("toggleFoguetes");
+            var submenuFoguetes = document.getElementById("submenuFoguetes");
+
+            function closeAll() {
+                submenuHistoria.className = "submenu";
+                submenuFoguetes.className = "submenu";
+            }
+
+            toggleHistoria.onclick = function (e) {
+                e.preventDefault();
+                if (submenuHistoria.className === "submenu") {
+                    closeAll();
+                    submenuHistoria.className = "submenu show";
+                } else {
+                    submenuHistoria.className = "submenu";
+                }
+            };
+
+            toggleFoguetes.onclick = function (e) {
+                e.preventDefault();
+                if (submenuFoguetes.className === "submenu") {
+                    closeAll();
+                    submenuFoguetes.className = "submenu show";
+                } else {
+                    submenuFoguetes.className = "submenu";
+                }
+            };
+
+            document.onclick = function (event) {
+                if (
+                    event.target !== toggleHistoria && !submenuHistoria.contains(event.target) &&
+                    event.target !== toggleFoguetes && !submenuFoguetes.contains(event.target)
+                ) {
+                    closeAll();
+                }
+            };
+        };
+    </script>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li id="menuHome"><a href="../index.html">HOME</a></li>
+
+                <li id="menuFoguetes">
+                    <a href="#" id="toggleFoguetes">Foguetes</a>
+                    <ul id="submenuFoguetes" class="submenu">
+                        <li><a href="./4.html">Como funciona</a></li>
+                        <li><a href="./5.html">Tipos de foguetes</a></li>
+                        <li><a href="./6.html">Foguetes famosos</a></li>
+                        <li><a href="./8.html">Galeria de Imagens</a></li>
+                    </ul>
+                </li>
+                <li id="menuHistoria">
+                    <a href="#" id="toggleHistoria">História</a>
+                    <ul id="submenuHistoria" class="submenu">
+                        <li><a href="./3.html">História</a></li>
+                        <li><a href="./7.html">Missões</a></li>
+                        <li><a href="./11.html">Curiosidades</a></li>
+                    </ul>
+                </li>
+
+                <li id="menuQuiz"><a href="./9.html">Quiz</a></li>
+
+                <li id="menuSobre"><a href="./2.html">Sobre</a></li>
+
+                <li id="menuContatos"><a href="./10.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="containerFuncionamento">
+        <div id="paginaPrincipal">
+        <h2 class="FonteGrande">Contatos</h2>
+        <div>
+            <div>
+            <p class="FonteMaior">Project Lead: Gabriel Ribeiro Rodrigues</p>
+            <p class="FonteMaior">Telefone: N.A | E-mail: N.A</p>
+            </div>
+            <div>
+            <p class="FonteMaior">Progamador: Nicolas Antônio</p>
+            <p class="FonteMaior">Telefone: N.A | E-mail: N.A</p>
+            </div>
+            <div>
+            <p class="FonteMaior">Progamadora: Emanuelle</p>
+            <p class="FonteMaior">Telefone: N.A | E-mail: N.A</p>
+            </div>
+            <div>
+            <p class="FonteMaior">Redator: Athos</p>
+            <p class="FonteMaior">Telefone: N.A | E-mail: N.A</p>
+            </div>
+            <div>
+            <p class="FonteMaior">Designer: Felipe Terra</p>
+            <p class="FonteMaior">Telefone: N.A | E-mail: N.A</p>
+            </div>
+        </div>
+        <h3 class="FonteGigante">Quer dar feedback?</h3>
+        <p class="FonteGigante"><a href="#" id="comecarFormulario" onclick="comecarForm()" class="button">Clique aqui</a> para começar o formulário</p>
+        </div>
+        <script>
+            function comecarForm() {
+                document.getElementById("paginaPrincipal").style.display = "none";
+                document.getElementById("formulario").style.display = "block";
+            }
+        </script>
+        <div id="formulario" style="display:none;">
+            <form id="form" action="#" method="get">
+                <h2 class="FonteGrande">Dados</h2>
+                <p class="FonteMaior">
+                    <label for="nome">Nome:</label><br>
+                    <input type="text" id="nome" name="nome" placeholder="Informe o nome" size="20">
+                </p>
+
+                <p class="FonteMaior">
+                    <label for="Email">Email:</label><br>
+                    <input type="text" id="email" name="email" placeholder="Informe o email" size="20">
+                </p>
+
+                <p class="FonteMaior">
+                    <label for="fone">Telefone:</label><br>
+                    <input type="text" id="fone" placeholder="Informe o telefone">
+                </p>
+                <p class="FonteMaior">
+                    <label class="labelcheckbox" for="comoConheceu">Escolha de onde conheceu nosso site!</label><br>
+                    <label class="aviso" for="comoConheceu">(Pode escolher mais de 1)</label><br><br>
+
+                    <input type="checkbox" id="instagram" name="comoConheceu" value="INSTAGRAM">
+                    <label for="instagram">Instagram</label><br>
+
+                    <input type="checkbox" id="tiktok" name="comoConheceu" value="TIKTOK">
+                    <label for="tiktok">Tiktok</label><br>
+
+                    <input type="checkbox" id="facebook" name="comoConheceu" value="FACEBOOK">
+                    <label for="facebook">Facebook</label><br>
+
+                    <input type="checkbox" id="twitter" name="comoConheceu" value="TWITTER">
+                    <label for="twitter">X (antigo Twitter)</label><br>
+
+                    <input type="checkbox" id="pessoas" name="comoConheceu" value="PESSOAS">
+                    <label for="pessoas">Pessoas falando sobre</label><br>
+
+                    <input type="checkbox" id="outro" name="comoConheceu" value="OUTRO">
+                    <label for="outro">Outro</label>
+                </p>
+
+                <p class="FonteMaior">
+                    <label for="satisfacao">Escolha o nível de satisfação</label><br><br>
+
+                    <select name="satisfacao" id="satisfacao">
+                        <option value="0">Nivel de satisfação:</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </p>
+
+                <p class="FonteMaior">
+                    <label for="radio">Escolha o tipo de feedback</label><br><br>
+
+                    <input type="radio" id="elogio" name="tipoFeedback" value="ELOGIO">
+                    <label for="elogio">Elogio</label>
+
+                    <input type="radio" id="reclamacao" name="tipoFeedback" value="RECLAMACAO">
+                    <label for="reclamacao">Reclamação</label><br>
+
+                    <input type="radio" id="desinformacao" name="tipoFeedback" value="DESINFORMACAO">
+                    <label for="desinformacao">Desinformação</label><br>
+
+                    <input type="radio" id="responsividade" name="tipoFeedback" value="RESPONSIVIDADE">
+                    <label for="responsividade">Responsividade do site</label><br>
+
+                    <input type="radio" id="outro" name="tipoFeedback" value="OUTRO">
+                    <label for="outro">Outro</label>
+                </p>
+
+                <p class="FonteMaior">
+                    <label for="">Detalhes adicionais:</label><br><br>
+                    <textarea class="conhecimento" name="conhecimento" id="conhecimento" cols="20" rows="5"
+                        title="Dê seu feedback para que podermos melhorar! Máximo 5 linhas">  
+                    </textarea>
+                </p>
+
+                <p class="FonteMaior">
+                    <label>Confirme ou altere a data do feedback:</label><br>
+                    <input type="date" id="dataFeedback" name="dataFeedback">
+                </p>
+
+                <p class="FonteMaior">
+                    <input type="reset" value="Cancelar" title="Cancelar" onclick="terminarForm()">
+                    <input type="submit" value="Confirmar" title="Enviar dados" onclick="terminarForm()">
+                </p>
+
+                <script>
+                    const hoje = new Date();
+                    const formatoISO = hoje.toISOString().split('T')[0];
+                    document.getElementById('dataFeedback').value = formatoISO;
+
+                    function terminarForm() {
+                        document.getElementById("paginaPrincipal").style.display = "block";
+                        document.getElementById("formulario").style.display = "none";
+                    }
+                </script>
+
+                
+            </form>
+        </div>
+    </div>
+    </main>
+    <footer>
+        <p>Contato: 31 8971-4857 | Instagram: @foguetesmuitosfodas | TikTok: @foguetesfodas | Email:
+            foguetesfodas@gmail.com</p>
+    </footer>
+</body>
+
+</html>

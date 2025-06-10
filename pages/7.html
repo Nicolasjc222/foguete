@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+    <title>Foguetes</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            var toggleHistoria = document.getElementById("toggleHistoria");
+            var submenuHistoria = document.getElementById("submenuHistoria");
+            var toggleFoguetes = document.getElementById("toggleFoguetes");
+            var submenuFoguetes = document.getElementById("submenuFoguetes");
+
+            function closeAll() {
+                submenuHistoria.className = "submenu";
+                submenuFoguetes.className = "submenu";
+            }
+
+            toggleHistoria.onclick = function (e) {
+                e.preventDefault();
+                if (submenuHistoria.className === "submenu") {
+                    closeAll();
+                    submenuHistoria.className = "submenu show";
+                } else {
+                    submenuHistoria.className = "submenu";
+                }
+            };
+
+            toggleFoguetes.onclick = function (e) {
+                e.preventDefault();
+                if (submenuFoguetes.className === "submenu") {
+                    closeAll();
+                    submenuFoguetes.className = "submenu show";
+                } else {
+                    submenuFoguetes.className = "submenu";
+                }
+            };
+
+            document.onclick = function (event) {
+                if (
+                    event.target !== toggleHistoria && !submenuHistoria.contains(event.target) &&
+                    event.target !== toggleFoguetes && !submenuFoguetes.contains(event.target)
+                ) {
+                    closeAll();
+                }
+            };
+        };
+    </script>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li id="menuHome"><a href="../index.html">HOME</a></li>
+
+                <li id="menuFoguetes">
+                    <a href="#" id="toggleFoguetes">Foguetes</a>
+                    <ul id="submenuFoguetes" class="submenu">
+                        <li><a href="./4.html">Como funciona</a></li>
+                        <li><a href="./5.html">Tipos de foguetes</a></li>
+                        <li><a href="./6.html">Foguetes famosos</a></li>
+                        <li><a href="./8.html">Galeria de Imagens</a></li>
+                    </ul>
+                </li>
+                <li id="menuHistoria">
+                    <a href="#" id="toggleHistoria">História</a>
+                    <ul id="submenuHistoria" class="submenu">
+                        <li><a href="./3.html">História</a></li>
+                        <li><a href="./7.html">Missões</a></li>
+                        <li><a href="./11.html">Curiosidades</a></li>
+                    </ul>
+                </li>
+
+                <li id="menuQuiz"><a href="./9.html">Quiz</a></li>
+
+                <li id="menuSobre"><a href="./2.html">Sobre</a></li>
+
+                <li id="menuContatos"><a href="./10.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 style="text-align:center;">Lançamentos Históricos de Foguetes</h1>
+        <div id="map"></div>
+
+        <script>
+            function initMap() {
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 2,
+                    center: { lat: 0, lng: 0 },
+                });
+
+                const pontos = [
+                    {
+                        nome: "Sputnik 1",
+                        posicao: { lat: 45.920278, lng: 63.342222 }, // Baikonur
+                        imagem: "../images/Sputnik1.png",
+                        descricao: "Em 1957, o Sputnik 1 foi o primeiro satélite artificial da Terra. Sua entrada em órbita demonstrou que era possível lançar objetos ao espaço, marcando o início da corrida espacial e precipitando uma nova era na exploração espacial.",
+                    },
+                    {
+                        nome: "Apollo 11",
+                        posicao: { lat: 28.5728722, lng: -80.6489808 }, // Kennedy Space Center
+                        imagem: "../images/Apollo11.jpg",
+                        descricao: "1969: Primeiro pouso tripulado na Lua. Os Astronautas Armstrong e Aldrin pousaram na superfície lunar e se tornaram os primeiros humanos a caminhar na Lua. Em 20 de julho, Armstrong proferiu a famosa frase: “É um pequeno passo para [um] homem, um grande salto para a humanidade.”",
+                    },
+                    {
+                        nome: "Artemis 1",
+                        posicao: { lat: 28.573255, lng: -80.646895 }, // Kennedy Space Center
+                        imagem: "../images/Artemis1.jpg",
+                        descricao: "2022: Missão não tripulada que marca o retorno à Lua. A nave fez uma jornada em torno da Lua, testando sistemas críticos, e retornou à Terra com um pouso no oceano.",
+                    },
+                    {
+                        nome: "SpaceX Crew Dragon",
+                        posicao: { lat: 28.562302, lng: -80.577356 }, // Kennedy LC-39A
+                        imagem: "../images/SpaceXCrewLaunch.jpg",
+                        descricao: "Desde 2020: Transporte comercial de astronautas para a ISS. Seu primeiro voo tripulado foi a missão Demo-2 em maio de 2020, com os astronautas Doug Hurley e Bob Behnken, marcando o retorno dos lançamentos de astronautas dos EUA a partir de solo americano após quase uma década. Desde então, o Crew Dragon realiza voos regulares para a ISS, tanto em missões da NASA quanto em missões privadas.",
+                    },
+                    {
+                        nome: "James Webb",
+                        posicao: { lat: 5.236, lng: -52.768 }, // Kourou, Guiana Francesa
+                        imagem: "../images/JamesWebb.jpg",
+                        descricao: "2021: Telescópio espacial mais avançado já lançado. Ele opera em infravermelho, permitindo observar galáxias distantes, exoplanetas e regiões de formação estelar com um nível de detalhe sem precedentes.",
+                    }
+                ];
+
+                let janelaAberta = null;
+
+                pontos.forEach(ponto => {
+                    const marcador = new google.maps.Marker({
+                        position: ponto.posicao,
+                        map: map,
+                        title: ponto.nome,
+                    });
+
+                    const infoWindow = new google.maps.InfoWindow({
+                        content: `
+                            <div class="info-window">
+                                <h3>${ponto.nome}</h3>
+                                <img src="${ponto.imagem}" alt="${ponto.nome}">
+                                <p>${ponto.descricao}</p>
+                            </div>
+                                `
+                    });
+
+                    marcador.addListener("mouseover", () => {
+                        if (janelaAberta) janelaAberta.close();
+                        infoWindow.open(map, marcador);
+                        janelaAberta = infoWindow;
+                    });
+
+                    marcador.addListener("click", () => {
+                        if (janelaAberta !== infoWindow) {
+                            if (janelaAberta) janelaAberta.close();
+                            infoWindow.open(map, marcador);
+                            janelaAberta = infoWindow;
+                        }
+                    });
+
+                    map.addListener("click", () => {
+                        if (janelaAberta) {
+                            janelaAberta.close();
+                            janelaAberta = null;
+                        }
+                    });
+                });
+            }
+        </script>
+
+        <script async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVVzag2WUvkyMe3NGMfshvLSbF-EFLaUo&callback=initMap">
+            </script>
+    </main>
+    <footer>
+        <p>Contato: 31 8971-4857 | Instagram: @foguetesmuitosfodas | TikTok: @foguetesfodas | Email:
+            foguetesfodas@gmail.com</p>
+    </footer>
+</body>
+
+</html>

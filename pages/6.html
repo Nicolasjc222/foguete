@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+    <title>Foguetes</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            var toggleHistoria = document.getElementById("toggleHistoria");
+            var submenuHistoria = document.getElementById("submenuHistoria");
+            var toggleFoguetes = document.getElementById("toggleFoguetes");
+            var submenuFoguetes = document.getElementById("submenuFoguetes");
+
+            function closeAll() {
+                submenuHistoria.className = "submenu";
+                submenuFoguetes.className = "submenu";
+            }
+
+            toggleHistoria.onclick = function (e) {
+                e.preventDefault();
+                if (submenuHistoria.className === "submenu") {
+                    closeAll();
+                    submenuHistoria.className = "submenu show";
+                } else {
+                    submenuHistoria.className = "submenu";
+                }
+            };
+
+            toggleFoguetes.onclick = function (e) {
+                e.preventDefault();
+                if (submenuFoguetes.className === "submenu") {
+                    closeAll();
+                    submenuFoguetes.className = "submenu show";
+                } else {
+                    submenuFoguetes.className = "submenu";
+                }
+            };
+
+            document.onclick = function (event) {
+                if (
+                    event.target !== toggleHistoria && !submenuHistoria.contains(event.target) &&
+                    event.target !== toggleFoguetes && !submenuFoguetes.contains(event.target)
+                ) {
+                    closeAll();
+                }
+            };
+        };
+    </script>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li id="menuHome"><a href="../index.html">HOME</a></li>
+
+                <li id="menuFoguetes">
+                    <a href="#" id="toggleFoguetes">Foguetes</a>
+                    <ul id="submenuFoguetes" class="submenu">
+                        <li><a href="./4.html">Como funciona</a></li>
+                        <li><a href="./5.html">Tipos de foguetes</a></li>
+                        <li><a href="./6.html">Foguetes famosos</a></li>
+                        <li><a href="./8.html">Galeria de Imagens</a></li>
+                    </ul>
+                </li>
+                <li id="menuHistoria">
+                    <a href="#" id="toggleHistoria">História</a>
+                    <ul id="submenuHistoria" class="submenu">
+                        <li><a href="./3.html">História</a></li>
+                        <li><a href="./7.html">Missões</a></li>
+                        <li><a href="./11.html">Curiosidades</a></li>
+                    </ul>
+                </li>
+
+                <li id="menuQuiz"><a href="./9.html">Quiz</a></li>
+
+                <li id="menuSobre"><a href="./2.html">Sobre</a></li>
+
+                <li id="menuContatos"><a href="./10.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="containerFuncionamento">
+            <h1 class="FonteGigante">Os Mais Famosos</h1>
+            <section class="foguete">
+                <h2 class="FonteGrande">Saturn V</h2>
+                <p class="FonteMaior">Entre os foguetes mais famosos da história, o Saturn V se destaca como o maior já
+                    construído, responsável por levar os astronautas à Lua durante o programa Apollo.</p>
+                <p class="FonteMaior">Era um foguete multiestágios, propelido pelos cinco poderosos motores F-1 do
+                    primeiro estágio, e por 6 motores J-2 dos estágios seguintes. O combustível era um composto parecido
+                    com querosene, e sua refrigeração era feita com oxigênio e hidrogênio líquido.</p>
+                <div class="img-row">
+                    <img src="../images/SaturnV.jpg" alt="Foguete 1">
+                    <img src="../images/SaturnV2.jpg" alt="Foguete 2">
+                </div>
+            </section>
+
+            <section class="foguete">
+                <h2 class="FonteGrande">Falcon 9</h2>
+                <p class="FonteMaior">O Falcon 9 revolucionou o mercado por sua capacidade de reutilização, enquanto o
+                    Vostok 1 marcou o início da era espacial tripulada.</p>
+                <p class="FonteMaior">É um foguete de dois estágios projetado e construído pela SpaceX no Estados
+                    Unidos, queimando oxigênio líquido e querosene refinado como propelentes. Foi o primeiro foguete não
+                    tripulado a conseguir pousar após o lançamento</p>
+                <div class="img-row">
+                    <img src="../images/Falcon9.jpg" alt="Foguete 3">
+                    <img src="../images/Falcon92.jpg" alt="Foguete 4">
+                </div>
+            </section>
+
+            <section class="foguete">
+                <h2 class="FonteGrande">Ariane 5</h2>
+                <p class="FonteMaior">O Ariane 5 tinha forte presença no mercado comercial de lançamentos, e a série
+                    Longa
+                    Marcha é o símbolo do crescimento espacial da China.</p>
+                <p class="FonteMaior">Ele foi um lançador descartável designado a colocar satélites artificiais em
+                    órbitas geoestacionárias e de enviar cargas para órbitas de baixa altitude e foi o responsável por levar ao espaço o Telescópio Espacial James Webb</p>
+                <div class="img-row">
+                    <img src="../images/Ariane5.jpg" alt="Foguete 5">
+                    <img src="../images/Ariane52.jpg" alt="Foguete 6">
+                </div>
+
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>Contato: 31 8971-4857 | Instagram: @foguetesmuitosfodas | TikTok: @foguetesfodas | Email:
+            foguetesfodas@gmail.com</p>
+    </footer>
+</body>
+
+</html>

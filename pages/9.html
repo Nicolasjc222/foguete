@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+    <title>Foguetes</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            var toggleHistoria = document.getElementById("toggleHistoria");
+            var submenuHistoria = document.getElementById("submenuHistoria");
+            var toggleFoguetes = document.getElementById("toggleFoguetes");
+            var submenuFoguetes = document.getElementById("submenuFoguetes");
+
+            function closeAll() {
+                submenuHistoria.className = "submenu";
+                submenuFoguetes.className = "submenu";
+            }
+
+            toggleHistoria.onclick = function (e) {
+                e.preventDefault();
+                if (submenuHistoria.className === "submenu") {
+                    closeAll();
+                    submenuHistoria.className = "submenu show";
+                } else {
+                    submenuHistoria.className = "submenu";
+                }
+            };
+
+            toggleFoguetes.onclick = function (e) {
+                e.preventDefault();
+                if (submenuFoguetes.className === "submenu") {
+                    closeAll();
+                    submenuFoguetes.className = "submenu show";
+                } else {
+                    submenuFoguetes.className = "submenu";
+                }
+            };
+
+            document.onclick = function (event) {
+                if (
+                    event.target !== toggleHistoria && !submenuHistoria.contains(event.target) &&
+                    event.target !== toggleFoguetes && !submenuFoguetes.contains(event.target)
+                ) {
+                    closeAll();
+                }
+            };
+        };
+    </script>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li id="menuHome"><a href="../index.html">HOME</a></li>
+
+                <li id="menuFoguetes">
+                    <a href="#" id="toggleFoguetes">Foguetes</a>
+                    <ul id="submenuFoguetes" class="submenu">
+                        <li><a href="./4.html">Como funciona</a></li>
+                        <li><a href="./5.html">Tipos de foguetes</a></li>
+                        <li><a href="./6.html">Foguetes famosos</a></li>
+                        <li><a href="./8.html">Galeria de Imagens</a></li>
+                    </ul>
+                </li>
+                <li id="menuHistoria">
+                    <a href="#" id="toggleHistoria">História</a>
+                    <ul id="submenuHistoria" class="submenu">
+                        <li><a href="./3.html">História</a></li>
+                        <li><a href="./7.html">Missões</a></li>
+                        <li><a href="./11.html">Curiosidades</a></li>
+                    </ul>
+                </li>
+
+                <li id="menuQuiz"><a href="./9.html">Quiz</a></li>
+
+                <li id="menuSobre"><a href="./2.html">Sobre</a></li>
+
+                <li id="menuContatos"><a href="./10.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="containerFuncionamento">
+        <div id="Quiz">
+            <div class="Questao" id="Q1" style="text-align: center;">
+                <p class="FonteGrande">Questão 1:</p>
+                <p class="FonteMaior">Qual ano foi a incursão da missão Apollo 11?</p>
+                <form>
+                    <label class="FonteMaior"><input type="radio" id="Q1_R1" name="Q1" value="resposta1"> 1965</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q1_R2" name="Q1" value="resposta2"> 1971</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q1_R3" name="Q1" value="resposta3"> 1959</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q1_R4" name="Q1" value="resposta4"> 1969</label>
+                </form>
+                <button onclick="ProximaQuestao(1)">Próxima</button>
+            </div>
+
+            <div class="Questao" id="Q2" style="display:none; text-align: center;">
+                <p class="FonteGrande">Questão 2:</p>
+                <p class="FonteMaior">Qual foi o evento no mundo que desencadeou a aceleração das missões espaciais?</p>
+                <form>
+                    <label class="FonteMaior"><input type="radio" id="Q2_R1" name="Q2" value="resposta1"> Revolução Industrial</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q2_R2" name="Q2" value="resposta2"> Guerra Fria</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q2_R3" name="Q2" value="resposta3"> Segunda Guerra Mundial</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q2_R4" name="Q2" value="resposta4"> Crise do Petróleo</label>
+                </form>
+                <button onclick="VoltarQuestao(2)">Voltar</button>
+                <button onclick="ProximaQuestao(2)">Próxima</button>
+            </div>
+
+            <div class="Questao" id="Q3" style="display:none; text-align: center;">
+                <p class="FonteGrande">Questão 3:</p>
+                <p class="FonteMaior">Qual foi o primeiro foguete satélite a ser lançado no mundo?</p>
+                <form>
+                    <label class="FonteMaior"><input type="radio" id="Q3_R1" name="Q3" value="resposta1"> Sputnik 1</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q3_R2" name="Q3" value="resposta2"> Apollo 1</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q3_R3" name="Q3" value="resposta3"> Explorer 1</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q3_R4" name="Q3" value="resposta4"> Vostok</label>
+                </form>
+                <button onclick="VoltarQuestao(3)">Voltar</button>
+                <button onclick="ProximaQuestao(3)">Próxima</button>
+            </div>
+
+            <div class="Questao" id="Q4" style="display:none; text-align: center;">
+                <p class="FonteGrande">Questão 4:</p>
+                <p class="FonteMaior">Qual foi o ano em que ocorreu a primeira missão tripulada a lua?</p>
+                <form>
+                    <label class="FonteMaior"><input type="radio" id="Q4_R1" name="Q4" value="resposta1"> 1961</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q4_R2" name="Q4" value="resposta2"> 1975</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q4_R3" name="Q4" value="resposta3"> 1969</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q4_R4" name="Q4" value="resposta4"> 1971</label>
+                </form>
+                <button onclick="VoltarQuestao(4)">Voltar</button>
+                <button onclick="ProximaQuestao(4)">Próxima</button>
+            </div>
+
+            <div class="Questao" id="Q5" style="display:none; text-align: center;">
+                <p class="FonteGrande">Questão 5:</p>
+                <p class="FonteMaior">Aonde foi criado o primeiro foguete primitivo?</p>
+                <form>
+                    <label class="FonteMaior"><input type="radio" id="Q5_R1" name="Q5" value="resposta1"> Egito</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q5_R2" name="Q5" value="resposta2"> China</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q5_R3" name="Q5" value="resposta3"> Grécia</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q5_R4" name="Q5" value="resposta4"> Mesopotâmia</label>
+                </form>
+                <button onclick="VoltarQuestao(5)">Voltar</button>
+                <button onclick="ProximaQuestao(5)">Próxima</button>
+            </div>
+
+            <div class="Questao" id="Q6" style="display:none; text-align: center;">
+                <p class="FonteGrande">Questão 6:</p>
+                <p class="FonteMaior">Qual das alternativas abaixo não é um uso de foguetes atualmente?</p>
+                <form>
+                    <label class="FonteMaior"><input type="radio" id="Q6_R1" name="Q6" value="resposta1"> Envio de satélites</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q6_R2" name="Q6" value="resposta2"> Irrigação agrícola</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q6_R3" name="Q6" value="resposta3"> Transporte de cargas</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q6_R4" name="Q6" value="resposta4"> Missões científicas</label>
+                </form>
+                <button onclick="VoltarQuestao(6)">Voltar</button>
+                <button onclick="ProximaQuestao(6)">Próxima</button>
+            </div>
+
+            <div class="Questao" id="Q7" style="display:none; text-align: center;">
+                <p class="FonteGrande">Questão 7:</p>
+                <p class="FonteMaior">Qual é o maior problema enfrentado pelos cientistas aeroespaciais atualmente?</p>
+                <form>
+                    <label class="FonteMaior"><input type="radio" id="Q7_R1" name="Q7" value="resposta1"> Desconhecimento da Lua</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q7_R2" name="Q7" value="resposta2"> Ausência de astronautas</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q7_R3" name="Q7" value="resposta3"> Falta de combustível</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q7_R4" name="Q7" value="resposta4"> Acúmulo de lixo espacial</label>
+                </form>
+                <button onclick="VoltarQuestao(7)">Voltar</button>
+                <button onclick="ProximaQuestao(7)">Próxima</button>
+            </div>
+
+            <div class="Questao" id="Q8" style="display:none; text-align: center;">
+                <p class="FonteGrande">Questão 8:</p>
+                <p class="FonteMaior">Quando foi lançado a primeira estação espacial da história?</p>
+                <form>
+                    <label class="FonteMaior"><input type="radio" id="Q8_R1" name="Q8" value="resposta1"> 1971</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q8_R2" name="Q8" value="resposta2"> 1969</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q8_R3" name="Q8" value="resposta3"> 1973</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q8_R4" name="Q8" value="resposta4"> 1981</label>
+                </form>
+                <button onclick="VoltarQuestao(8)">Voltar</button>
+                <button onclick="ProximaQuestao(8)">Próxima</button>
+            </div>
+
+            <div class="Questao" id="Q9" style="display:none; text-align: center;">
+                <p class="FonteGrande">Questão 9:</p>
+                <p class="FonteMaior">Qual das alternativas abaixo não é um foguete?</p>
+                <form>
+                    <label class="FonteMaior"><input type="radio" id="Q9_R1" name="Q9" value="resposta1"> Curiosity</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q9_R2" name="Q9" value="resposta2"> Falcon 9</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q9_R3" name="Q9" value="resposta3"> Saturn V</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q9_R4" name="Q9" value="resposta4"> Ariane 5</label>
+                </form>
+                <button onclick="VoltarQuestao(9)">Voltar</button>
+                <button onclick="ProximaQuestao(9)">Próxima</button>
+            </div>
+
+            <div class="Questao" id="Q10" style="display:none; text-align: center;">
+                <p class="FonteGrande">Questão 10:</p>
+                <p class="FonteMaior">Qual foi a empresa que quebrou o icônico ditado “foguete não dá ré“?</p>
+                <form>
+                    <label class="FonteMaior"><input type="radio" id="Q10_R1" name="Q10" value="resposta1"> Blue Origin</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q10_R2" name="Q10" value="resposta2"> Boeing</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q10_R3" name="Q10" value="resposta3"> NASA</label><br>
+                    <label class="FonteMaior"><input type="radio" id="Q10_R4" name="Q10" value="resposta4"> SpaceX</label>
+                </form>
+                <button onclick="VoltarQuestao(10)">Voltar</button>
+                <button onclick="FinalizarQuiz(10)">Finalizar</button>
+            </div>
+
+            <div id="Resultado" style="display:none; text-align: center;">
+                <h2 class="FonteGrande">Quiz finalizado!</h2>
+                <div class="ParagrafoGrid">
+                    <p id="ResultadoTexto" class="FonteMaior"></p>
+                    <img src="../images/fogueteVoando.gif" alt="GIF Foguete Voando" width="35%">
+                </div>
+
+            </div>
+        </div>
+        <script>
+            const respostas = {};
+            const respostasCorretas = [
+                "Q1_R4",  // Questão 1 correta: 1969
+                "Q2_R2",  // Questão 2 correta: Guerra Fria
+                "Q3_R1",  // Questão 3 correta: Sputnik 1
+                "Q4_R3",  // Questão 4 correta: 1969
+                "Q5_R2",  // Questão 5 correta: China
+                "Q6_R2",  // Questão 6 correta: Irrigação agrícola
+                "Q7_R4",  // Questão 7 correta: Acúmulo de lixo espacial
+                "Q8_R1",  // Questão 8 correta: 1971
+                "Q9_R1",  // Questão 9 correta: Curiosity
+                "Q10_R4"  // Questão 10 correta: SpaceX
+            ];
+
+            function ProximaQuestao(numero) {
+                for (let i = 1; i <= 4; i++) {
+                    let input = document.getElementById(`Q${numero}_R${i}`);
+                    if (input.checked) {
+                        respostas[`Q${numero}`] = input.id;
+                        break;
+                    }
+                }
+
+                document.getElementById(`Q${numero}`).style.display = "none";
+                document.getElementById(`Q${numero + 1}`).style.display = "block";
+
+                let anterior = respostas[`Q${numero + 1}`];
+                if (anterior) {
+                    document.getElementById(anterior).checked = true;
+                }
+            }
+
+            function VoltarQuestao(numero) {
+                document.getElementById(`Q${numero}`).style.display = "none";
+                document.getElementById(`Q${numero - 1}`).style.display = "block";
+
+                let anterior = respostas[`Q${numero - 1}`];
+                if (anterior) {
+                    document.getElementById(anterior).checked = true;
+                }
+            }
+
+            function FinalizarQuiz(numero) {
+                for (let i = 1; i <= 4; i++) {
+                    let input = document.getElementById(`Q${numero}_R${i}`);
+                    if (input.checked) {
+                        respostas[`Q${numero}`] = input.id;
+                        break;
+                    }
+                }
+                const totalQuestoes = respostasCorretas.length;
+                for (let q = 1; q <= totalQuestoes; q++) {
+                    if (!respostas[`Q${q}`]) {
+                        alert(`Você não respondeu a Questão ${q}`);
+                        return;
+                    }
+                }
+
+                document.getElementById("Q" + totalQuestoes).style.display = "none";
+                document.getElementById("Resultado").style.display = "block";
+
+                let acertos = 0;
+                for (let q = 1; q <= totalQuestoes; q++) {
+                    if (respostas[`Q${q}`] === respostasCorretas[q - 1]) {
+                        acertos++;
+                    }
+                }
+
+                document.getElementById("ResultadoTexto").innerText = `Você acertou ${acertos} de ${totalQuestoes} perguntas!`;
+            }
+        </script>
+        </div>
+    </main>
+    <footer>
+        <p>Contato: 31 8971-4857 | Instagram: @foguetesmuitosfodas | TikTok: @foguetesfodas | Email:
+            foguetesfodas@gmail.com</p>
+    </footer>
+</body>
+
+</html>

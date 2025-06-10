@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+    <title>Foguetes</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            var toggleHistoria = document.getElementById("toggleHistoria");
+            var submenuHistoria = document.getElementById("submenuHistoria");
+            var toggleFoguetes = document.getElementById("toggleFoguetes");
+            var submenuFoguetes = document.getElementById("submenuFoguetes");
+
+            function closeAll() {
+                submenuHistoria.className = "submenu";
+                submenuFoguetes.className = "submenu";
+            }
+
+            toggleHistoria.onclick = function (e) {
+                e.preventDefault();
+                if (submenuHistoria.className === "submenu") {
+                    closeAll();
+                    submenuHistoria.className = "submenu show";
+                } else {
+                    submenuHistoria.className = "submenu";
+                }
+            };
+
+            toggleFoguetes.onclick = function (e) {
+                e.preventDefault();
+                if (submenuFoguetes.className === "submenu") {
+                    closeAll();
+                    submenuFoguetes.className = "submenu show";
+                } else {
+                    submenuFoguetes.className = "submenu";
+                }
+            };
+
+            document.onclick = function (event) {
+                if (
+                    event.target !== toggleHistoria && !submenuHistoria.contains(event.target) &&
+                    event.target !== toggleFoguetes && !submenuFoguetes.contains(event.target)
+                ) {
+                    closeAll();
+                }
+            };
+        };
+    </script>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li id="menuHome"><a href="../index.html">HOME</a></li>
+
+                <li id="menuFoguetes">
+                    <a href="#" id="toggleFoguetes">Foguetes</a>
+                    <ul id="submenuFoguetes" class="submenu">
+                        <li><a href="./4.html">Como funciona</a></li>
+                        <li><a href="./5.html">Tipos de foguetes</a></li>
+                        <li><a href="./6.html">Foguetes famosos</a></li>
+                        <li><a href="./8.html">Galeria de Imagens</a></li>
+                    </ul>
+                </li>
+                <li id="menuHistoria">
+                    <a href="#" id="toggleHistoria">História</a>
+                    <ul id="submenuHistoria" class="submenu">
+                        <li><a href="./3.html">História</a></li>
+                        <li><a href="./7.html">Missões</a></li>
+                        <li><a href="./11.html">Curiosidades</a></li>
+                    </ul>
+                </li>
+
+                <li id="menuQuiz"><a href="./9.html">Quiz</a></li>
+
+                <li id="menuSobre"><a href="./2.html">Sobre</a></li>
+
+                <li id="menuContatos"><a href="./10.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="containerFuncionamento">
+            <div class="text-section">
+                <h1 class="FonteGigante">Tipos de foguetes</h1>
+                <div class="row">
+                    <div class="col">
+                        <h2 class="FonteGrande">Sondas Espaciais:</h2>
+                        <p class="FonteMaior">São veículos não tripulados projetados para explorar o
+                            espaço profundo. Elas são lançadas por foguetes e seguem sozinhas rumo a destinos como
+                            planetas, luas, asteroides ou até mesmo além do Sistema Solar. Não retornam à Terra e
+                            geralmente operam de forma autônoma, transmitindo dados para cientistas. Um exemplo famoso é
+                            a Voyager 1, que foi lançada em 1977 e ainda envia sinais da borda do Sistema Solar.</p>
+                    </div>
+                    <div class="img-row">
+                        <img src="../images/tipofoguete1.jpg" alt="Foguete 1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h2 class="FonteGrande">Foguetes Tripulados:</h2>
+                        <p class="FonteMaior">Foguetes tripulados são veículos espaciais projetados para levar
+                            astronautas ao espaço. Eles possuem sistemas complexos de suporte à vida, escudos térmicos e
+                            módulos de segurança para proteger a tripulação. São usados em missões orbitais (como as da
+                            ISS) e, historicamente, em pousos lunares. O Saturno V, usado na missão Apollo 11, é um
+                            ícone desse tipo. Hoje, o Crew Dragon da SpaceX e a cápsula Orion da NASA continuam esse
+                            legado.
+                        </p>
+                    </div>
+                    <div class="img-row">
+                        <img src="../images/tipofoguete2.jpg" alt="Foguete 2">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h2 class="FonteGrande">Foguetes Reutilizáveis:</h2>
+                        <p class="FonteMaior">Esses foguetes são projetados para retornar à Terra após o lançamento e
+                            serem usados novamente, o que reduz custos e tempo entre missões. A SpaceX foi pioneira
+                            nesse conceito com o Falcon 9, cujo primeiro estágio pousa verticalmente após liberar a
+                            carga. Essa tecnologia marcou uma revolução na indústria espacial, tornando o acesso ao
+                            espaço mais acessível e frequente.</p>
+                    </div>
+                    <div class="img-row">
+                        <img src="../images/tipofoguete3.jpg" alt="Foguete 3">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h2 class="FonteGrande">Lançadores Comerciais:</h2>
+                        <p class="FonteMaior">Lançadores comerciais são foguetes desenvolvidos por empresas privadas
+                            para fornecer serviços de lançamento a governos, empresas e universidades. Eles podem ser
+                            tripulados ou não, reutilizáveis ou descartáveis. Exemplos incluem os foguetes da SpaceX,
+                            Blue Origin e Rocket Lab. Esses veículos ampliaram o acesso ao espaço, tornando mais viável
+                            o envio de satélites, experimentos científicos e até missões espaciais inteiras por meio da
+                            iniciativa privada. Uma iniciativa brasileira é o VLS-1, criado e lançado no Brasil.</p>
+                    </div>
+                    <img src="../images/tipofoguete4.jpg" alt="Foguete 4">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Contato: 31 8971-4857 | Instagram: @foguetesmuitosfodas | TikTok: @foguetesfodas | Email:
+            foguetesfodas@gmail.com</p>
+    </footer>
+</body>
+
+</html>

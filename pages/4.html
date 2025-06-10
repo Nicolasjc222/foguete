@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+    <title>Foguetes</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            var toggleHistoria = document.getElementById("toggleHistoria");
+            var submenuHistoria = document.getElementById("submenuHistoria");
+            var toggleFoguetes = document.getElementById("toggleFoguetes");
+            var submenuFoguetes = document.getElementById("submenuFoguetes");
+
+            function closeAll() {
+                submenuHistoria.className = "submenu";
+                submenuFoguetes.className = "submenu";
+            }
+
+            toggleHistoria.onclick = function (e) {
+                e.preventDefault();
+                if (submenuHistoria.className === "submenu") {
+                    closeAll();
+                    submenuHistoria.className = "submenu show";
+                } else {
+                    submenuHistoria.className = "submenu";
+                }
+            };
+
+            toggleFoguetes.onclick = function (e) {
+                e.preventDefault();
+                if (submenuFoguetes.className === "submenu") {
+                    closeAll();
+                    submenuFoguetes.className = "submenu show";
+                } else {
+                    submenuFoguetes.className = "submenu";
+                }
+            };
+
+            document.onclick = function (event) {
+                if (
+                    event.target !== toggleHistoria && !submenuHistoria.contains(event.target) &&
+                    event.target !== toggleFoguetes && !submenuFoguetes.contains(event.target)
+                ) {
+                    closeAll();
+                }
+            };
+        };
+    </script>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li id="menuHome"><a href="../index.html">HOME</a></li>
+
+                <li id="menuFoguetes">
+                    <a href="#" id="toggleFoguetes">Foguetes</a>
+                    <ul id="submenuFoguetes" class="submenu">
+                        <li><a href="./4.html">Como funciona</a></li>
+                        <li><a href="./5.html">Tipos de foguetes</a></li>
+                        <li><a href="./6.html">Foguetes famosos</a></li>
+                        <li><a href="./8.html">Galeria de Imagens</a></li>
+                    </ul>
+                </li>
+                <li id="menuHistoria">
+                    <a href="#" id="toggleHistoria">História</a>
+                    <ul id="submenuHistoria" class="submenu">
+                        <li><a href="./3.html">História</a></li>
+                        <li><a href="./7.html">Missões</a></li>
+                        <li><a href="./11.html">Curiosidades</a></li>
+                    </ul>
+                </li>
+
+                <li id="menuQuiz"><a href="./9.html">Quiz</a></li>
+
+                <li id="menuSobre"><a href="./2.html">Sobre</a></li>
+
+                <li id="menuContatos"><a href="./10.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="containerFuncionamento">
+            <h1 class="FonteGrande">Como Funciona</h1>
+            <div class="row">
+                <div class="col">
+                    <p class="FonteMaior">O funcionamento de um foguete baseia-se na queima controlada de dois componentes essenciais: o
+                        combustível e o comburente. Diferente dos veículos que dependem do oxigênio do ar para queimar o
+                        combustível, os foguetes precisam carregar seu próprio comburente, pois operam em ambientes onde
+                        não há oxigênio, como o espaço. Esses dois líquidos ficam armazenados em tanques separados e,
+                        durante o voo, são bombeados até a câmara de combustão, onde se misturam e reagem, liberando uma
+                        grande quantidade de gases quentes. A expansão rápida desses gases gera um jato potente que é
+                        expelido pela parte traseira do foguete, através de um bocal especial que acelera os gases,
+                        criando uma força chamada empuxo. </p>
+                </div>
+                <div class="img-row">
+                    <img src="../images/funciona1.jpg" alt="Tipos de Foguetes">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="img-row">
+                    <img src="../images/funciona2.jpg" alt="Parte Inferior do Foguete">
+                </div>
+                <div class="col">
+                    <p class="FonteMaior">Esse processo é um exemplo direto da terceira lei de Newton, que diz que para toda ação existe
+                        uma reação igual e contrária: ao expulsar os gases para trás, o foguete é impulsionado para
+                        frente.
+                        Para garantir que o foguete siga a trajetória correta, ele é equipado com sofisticados sistemas
+                        de controle e navegação. Sensores e computadores calculam sua posição e velocidade em tempo
+                        real, enquanto giroscópios ajudam a manter sua estabilidade, detectando qualquer desvio no voo.
+                        Além disso, o motor do foguete pode ajustar a direção do jato de gases por meio de um sistema
+                        chamado vetorização do empuxo, que inclina o bocal para controlar a direção, permitindo manobras
+                        precisas durante o voo.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <p class="FonteMaior">Foguetes maiores geralmente são divididos em estágios, que são partes que se destacam durante a
+                        subida. Conforme o combustível de cada estágio é consumido, ele é descartado para reduzir o peso
+                        total da nave, o que aumenta a eficiência e a velocidade alcançada. Essa separação progressiva é
+                        fundamental para que foguetes possam atingir grandes altitudes ou até mesmo o espaço.</p>
+                </div>
+                <div class="img-row">
+                    <img src="../images/funciona3.jpg" alt="Foguete">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <strong><p class="FonteGrande">Como funciona um foguete:</p></strong>
+
+                    <li class="FonteMaior"><strong>Combustível e Comburente:</strong> armazenados em tanques separados, são levados até a câmara de
+                        combustão onde reagem, liberando gases quentes.</li>
+                    <li class="FonteMaior"><strong>Propulsão:</strong> o empuxo é gerado pela expulsão dos gases para trás, segundo a terceira lei de
+                        Newton, impulsionando o foguete para frente.</li>
+                    <li class="FonteMaior"><strong>Controle e Direção:</strong> giroscópios, sistemas de navegação e vetorização do empuxo ajustam a
+                        estabilidade e a trajetória durante o voo.</li>
+                    <li class="FonteMaior"><strong>Estágios:</strong> partes do foguete que se separam durante a subida para otimizar peso e eficiência.</li>
+                </div>
+                    <div class="img-row">
+                        <img src="../images/funciona4.jpg" alt="foguete">
+                    </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Contato: 31 8971-4857 | Instagram: @foguetesmuitosfodas | TikTok: @foguetesfodas | Email:
+            foguetesfodas@gmail.com</p>
+    </footer>
+</body>
+
+</html>

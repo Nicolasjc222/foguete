@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+    <title>Foguetes</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            var toggleHistoria = document.getElementById("toggleHistoria");
+            var submenuHistoria = document.getElementById("submenuHistoria");
+            var toggleFoguetes = document.getElementById("toggleFoguetes");
+            var submenuFoguetes = document.getElementById("submenuFoguetes");
+
+            function closeAll() {
+                submenuHistoria.className = "submenu";
+                submenuFoguetes.className = "submenu";
+            }
+
+            toggleHistoria.onclick = function (e) {
+                e.preventDefault();
+                if (submenuHistoria.className === "submenu") {
+                    closeAll();
+                    submenuHistoria.className = "submenu show";
+                } else {
+                    submenuHistoria.className = "submenu";
+                }
+            };
+
+            toggleFoguetes.onclick = function (e) {
+                e.preventDefault();
+                if (submenuFoguetes.className === "submenu") {
+                    closeAll();
+                    submenuFoguetes.className = "submenu show";
+                } else {
+                    submenuFoguetes.className = "submenu";
+                }
+            };
+
+            document.onclick = function (event) {
+                if (
+                    event.target !== toggleHistoria && !submenuHistoria.contains(event.target) &&
+                    event.target !== toggleFoguetes && !submenuFoguetes.contains(event.target)
+                ) {
+                    closeAll();
+                }
+            };
+        };
+    </script>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li id="menuHome"><a href="../index.html">HOME</a></li>
+
+                <li id="menuFoguetes">
+                    <a href="#" id="toggleFoguetes">Foguetes</a>
+                    <ul id="submenuFoguetes" class="submenu">
+                        <li><a href="./4.html">Como funciona</a></li>
+                        <li><a href="./5.html">Tipos de foguetes</a></li>
+                        <li><a href="./6.html">Foguetes famosos</a></li>
+                        <li><a href="./8.html">Galeria de Imagens</a></li>
+                    </ul>
+                </li>
+                <li id="menuHistoria">
+                    <a href="#" id="toggleHistoria">História</a>
+                    <ul id="submenuHistoria" class="submenu">
+                        <li><a href="./3.html">História</a></li>
+                        <li><a href="./7.html">Missões</a></li>
+                        <li><a href="./11.html">Curiosidades</a></li>
+                    </ul>
+                </li>
+
+                <li id="menuQuiz"><a href="./9.html">Quiz</a></li>
+
+                <li id="menuSobre"><a href="./2.html">Sobre</a></li>
+
+                <li id="menuContatos"><a href="./10.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="containerFuncionamento">
+        <h1 class="FonteGigante">História</h1>
+
+        <div>
+        <h2 class="FonteGrande">Origens na China Antiga</h2>
+        <p class="FonteMaior">Os foguetes nasceram como uma consequência indireta da busca por mistérios alquímicos e filosóficos na China
+        antiga. Alquimistas da Dinastia Han (c. 200 a.C.) experimentavam misturas para encontrar o “elixir da
+        imortalidade”, e essa curiosidade levou à descoberta da pólvora no século IX, durante a Dinastia Tang. Essa
+        pólvora, uma combinação de salitre (nitrato de potássio), enxofre e carvão, era inicialmente usada para fins
+        cerimoniais — como fogos de artifício em festivais — mas também para fins militares, despertando interesse
+        estratégico.</p>
+        <p class="FonteMaior">Por volta do século X, a pólvora foi aplicada em dispositivos rudimentares que funcionavam como foguetes, usando
+        tubos de bambu para lançar flechas incendiárias ou pequenas cargas explosivas. Esses primeiros foguetes chineses
+        representavam o uso inicial da propulsão a reação, um princípio fundamental dos foguetes modernos. Embora
+        primitivos, esses artefatos marcaram o início do desenvolvimento da tecnologia de propulsão sólida.</p>
+        </div>
+
+        <div>
+        <h2 class="FonteGrande">Expansão e Uso Militar (séculos X ao XV)</h2>
+        <p class="FonteMaior">Na Dinastia Song (960-1279), o uso de foguetes e pólvora se sofisticou consideravelmente. Os relatos históricos
+        indicam que, em 1232, durante os conflitos contra os invasores mongóis, os chineses usaram flechas explosivas e
+        foguetes para defesa e ataque. As inovações incluíam lançadores múltiplos que disparavam vários foguetes
+        simultaneamente, aumentando o poder de fogo.</p>
+        <p class="FonteMaior">O tratado militar Huolongjing, escrito por Jiao Yu no século XIV, é uma obra fundamental, pois detalha vários
+        tipos de foguetes, incluindo foguetes de múltiplos estágios que podiam “descartar” partes durante o voo para
+        manter a propulsão. Também descreve técnicas de fabricação e métodos para estabilização em voo, como o uso de
+        aletas rudimentares.</p>
+        </div>
+
+        <div>
+        <h2 class="FonteGrande">Adoção no Ocidente e Avanços Teóricos (séculos XIV a XVI)</h2>
+        <p class="FonteMaior">Os conhecimentos sobre pólvora e foguetes começaram a se espalhar para o Ocidente, principalmente via rotas
+        comerciais e intercâmbios culturais, após o contato com o Oriente Médio e o Extremo Oriente.</p>
+        <p class="FonteMaior">Em 1380, durante a Batalha de Chioggia, na Itália, já há registros do uso militar de foguetes na Europa. No
+        início do século XV, inventores e engenheiros como Konrad Kyeser e Giovanni Fontana exploraram diferentes usos
+        para foguetes, incluindo foguetes aquáticos e até veículos propulsionados, um prenúncio dos futuros veículos
+        espaciais.</p>
+        <p class="FonteMaior">Conrad Haas, no século XVI, foi pioneiro ao descrever conceitos revolucionários, como foguetes de múltiplos
+        estágios e propelentes líquidos, muito à frente do seu tempo. Ele também propôs a utilização de aletas para
+        estabilidade e lançou bases teóricas para o controle do voo dos foguetes.</p>
+        <p class="FonteMaior">O termo “foguete” vem do italiano “rochetta”, um diminutivo de “rocca” (carretel), relacionado ao formato do
+        tubo usado para conter a pólvora.</p>
+        </div>
+
+        <div class="img-row">
+            <img src="../images/PrimeiroFogueteViking.jpg" alt="Foguete Viking" title="Viking">
+            <img src="../images/V2.jpg" alt="Foguete V2" title="V2">
+            <img src="../images/apollo-11Historia.jpg" alt="Foguete Apollo 11" title="Apollo11">
+            <img src="../images/Artemis1-histoira.jpg" alt="Foguete Artemis 1" title="Artemis1">
+        </div>
+
+        <div>
+        <h2 class="FonteGrande">Base Científica Moderna (século XX – pré-Segunda Guerra Mundial)</h2>
+        <p class="FonteMaior">O século XX marcou a transformação dos foguetes de armas primitivas em máquinas baseadas em princípios
+        científicos rigorosos.</p>
+        <p class="FonteMaior">Konstantin Tsiolkovski, matemático e engenheiro russo, publicou em 1903 o primeiro estudo científico completo
+        sobre a propulsão por reação, onde formulou a famosa equação do foguete, relacionando a velocidade de exaustão
+        dos gases e a velocidade final do foguete. Ele foi o primeiro a sugerir o uso de combustíveis líquidos, algo que
+        aumentaria muito o desempenho dos foguetes.</p>
+        <p class="FonteMaior">Nos EUA, Robert Goddard trabalhou intensamente para concretizar esses conceitos. Ele desenvolveu a primeira
+        câmara de combustão eficaz, introduziu o conceito de foguetes de múltiplos estágios para alcançar maiores
+        altitudes e aplicou o bocal de Laval para acelerar os gases, aumentando a eficiência do motor. Em 1926, Goddard
+        lançou com sucesso o primeiro foguete a combustível líquido do mundo, embora seu trabalho tenha sido pouco
+        valorizado na época.</p>
+        <p class="FonteMaior">Na Alemanha, o programa Opel-RAK, financiado por Fritz von Opel, realizou voos tripulados com foguetes em
+        veículos terrestres e aéreos, demonstrando o potencial da propulsão a foguete para o transporte.</p>
+        </div>
+
+        <div>
+        <h2 class="FonteGrande">Segunda Guerra Mundial e o V-2 (1930–1945)</h2>
+        <p class="FonteMaior">A Segunda Guerra Mundial acelerou o desenvolvimento dos foguetes, principalmente na Alemanha nazista, onde uma
+        equipe liderada por Wernher von Braun desenvolveu o foguete V-2, o primeiro míssil balístico de longo alcance do
+        mundo.</p>
+        <p class="FonteMaior">O V-2 foi uma revolução tecnológica: com 14 metros de comprimento, ele utilizava combustível líquido e podia
+        atingir velocidades supersônicas e altitudes acima da estratosfera (90 km). Seu alcance de cerca de 320 km o
+        tornou uma arma estratégica, lançada contra cidades como Londres, causando destruição e pânico.</p>
+        <p class="FonteMaior">Apesar da eficácia limitada e alta complexidade, o V-2 demonstrou o potencial dos foguetes para voo suborbital e
+        sentou as bases para os programas espaciais pós-guerra. Após o conflito, cientistas como von Braun foram
+        capturados e levados para os EUA (Operação Paperclip), onde impulsionaram a corrida espacial americana. Outros
+        foram para a União Soviética, fomentando a competição tecnológica da Guerra Fria.</p>
+        </div>
+    </div>
+    </main>
+    <footer>
+        <p>Contato: 31 8971-4857 | Instagram: @foguetesmuitosfodas | TikTok: @foguetesfodas | Email:
+            foguetesfodas@gmail.com</p>
+    </footer>
+</body>
+
+</html>
